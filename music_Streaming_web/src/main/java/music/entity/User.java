@@ -3,7 +3,10 @@ package music.entity;
 
 import java.util.ArrayList;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -27,16 +30,17 @@ public class User {
     
     private String username;
 
-    
+    @Column(nullable=false, unique = true)
     private String gmail;
 
     private String profilePhoto;
 
+    @Column(nullable=false)
     private String password;
 
     private boolean isLogged;
     private boolean isOnline;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private ArrayList<Music> music; 
 }
