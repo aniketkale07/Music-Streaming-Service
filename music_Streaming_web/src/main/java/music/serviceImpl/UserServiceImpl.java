@@ -20,8 +20,8 @@ public class UserServiceImpl implements UserService {
 private UserRepository userRepository;
 
     @Override
-    public User getUser(long userid) {
-        return null;
+    public User getUser(long userId) {
+        return userRepository.findById(userId).get();
     }
 
     @Override
@@ -33,6 +33,6 @@ private UserRepository userRepository;
     @Override
     public ArrayList<User> getAllUser() {
         
-        return null;
+        return (ArrayList<User>) userRepository.findAll();
     }  
 }

@@ -1,0 +1,19 @@
+{
+  "name": "music_Streaming_web",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build:css": "npx tailwindcss -i src/main/resources/static/css/input.css -o src/main/resources/static/css/output.css --minify",
+    "dev:css": "npx tailwindcss -i src/main/resources/static/css/input.css -o src/main/resources/static/css/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "flowbite": "^2.4.1",
+    "music_Streaming_web": "file:",
+    "postcss": "^8.4.39"
+  }
+}

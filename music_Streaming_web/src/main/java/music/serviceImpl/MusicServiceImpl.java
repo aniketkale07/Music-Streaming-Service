@@ -17,27 +17,23 @@ private MusicRepository musicRepository;
 
     @Override
     public ArrayList<Music> getAllMusic(long userId) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getAllMusic'");
     }
 
     @Override
     public Music getMusicById(long musicId) {
+        return musicRepository.findById(musicId).get();
         
-        // return musicRepository.getById(musicId);
-        return null;
     }
 
     @Override
     public ArrayList<Music> getMusicByAlbum(String album) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getMusic'");
     }
 
     @Override
     public void deleteMusic(long musicId) {
-        // TODO Auto-generated method stub
-        
+        musicRepository.deleteById(musicId);
   
     }
 }
