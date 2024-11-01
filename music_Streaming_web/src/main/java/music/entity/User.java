@@ -3,7 +3,9 @@ package music.entity;
 
 import java.util.ArrayList;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -37,6 +39,6 @@ public class User {
     private boolean isLogged;
     private boolean isOnline;
 
-    @OneToMany
-    private ArrayList<Music> music; 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private ArrayList<Music> music;
 }
