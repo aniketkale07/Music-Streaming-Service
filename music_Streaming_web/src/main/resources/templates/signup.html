@@ -1,38 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-th-replace="~{base-template :: parent(~{:: title}, ~{:: #content}, ~{:: script})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Signup Page</title>
 </head>
 <body>
-    <div class="container  mx-auto flex justify-center items-center min-h-screen">
-        <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl">
+    <div id="content"
+    class=" mt-10  container mx-auto flex justify-center items-center min-h-screen min-w-screen">
+        <div
+        class="bg-gradient-to-r from-blue-500 to-pink-500 
+        flex flex-col  md:flex-row bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl">
             
-        
-            <div class="hidden md:block md:w-1/2 bg-cover bg-center" style="background-image: url('https://img.freepik.com/free-vector/sign-up-concept-illustration_114360-27396.jpg?t=st=1730439443~exp=1730443043~hmac=d6c83011bee0649311522ec50b5ab348f946b33a86e0f6ab5995c7120c0ba90d&w=740');">
-            </div>
             
             <div class="w-full md:w-1/2 p-8 flex flex-col justify-center bg-gradient-to-r from-blue-300 to-purple-300">
-                <h3 class="text-3xl font-semibold text-center mb-6">Signup</h3>
-                <form action="" method="get" class="space-y-4">
-                    <div>
-                        <label class="sr-only">Username</label>
-                        <input type="text" placeholder="Username" class="font-semibold  w-full border border-gray-300 rounded-lg p-3 focus:border-indigo-500 focus:ring focus:ring-indigo-200">
+                <h3 class="text-3xl font-semibold text-center mb-10" style="font-family: 'Poppins', sans-serif;">Signup</h3>
+              
+                <form action="" method="get" class="space-y-4" >
+
+                    <!-- First Name and Last Name in single row -->
+                    <div class="flex space-x-4">
+                        <div class="w-1/2">
+                            <label class="font-semibold m-2">First Name:</label>
+                            <input type="text" placeholder="First Name" class="w-full font-semibold border border-gray-300 rounded-lg p-3 focus:border-indigo-500 focus:ring focus:ring-indigo-200" required>
+                        </div>
+                        <div class="w-1/2">
+                            <label class="font-semibold m-2">Last Name:</label>
+                            <input type="text" placeholder="Last Name" class="w-full font-semibold border border-gray-300 rounded-lg p-3 focus:border-indigo-500 focus:ring focus:ring-indigo-200" required>
+                        </div>
                     </div>
-                    <div>
-                        <label class="sr-only">Password</label>
-                        <input type="password" placeholder="Password" class=" font-semibold w-full border border-gray-300 rounded-lg p-3 focus:border-indigo-500 focus:ring focus:ring-indigo-200">
+                    <div class="flex space-x-4">
+
+                        <div class="w-1/2">
+                            <label for="email" class="font-semibold m-2">Email</label>
+                            <input type="email" name=""  id="email" class="mt-3 w-full font-semibold border border-gray-300 rounded-lg p-3 focus:border-indigo-500 focus:ring focus:ring-indigo-200" placeholder="email" required>
+                        </div>
+                        <div class="w-1/2">
+                            <label for="age" class="font-semibold m-2 ">Age</label>
+                            <input type="date" name="birthdate" id="birthdate" placeholder="Birth Date" class="mt-3 w-full font-semibold border border-gray-300 rounded-lg p-3 focus:border-indigo-500 focus:ring focus:ring-indigo-200">
+                        </div>
                     </div>
-                    <button type="submit" class="w-full bg-indigo-500 text-white rounded-lg p-3 font-semibold hover:bg-indigo-600">Login</button>
-                    <button type="submit" class="w-full bg-red-500 text-white rounded-lg p-3 font-semibold hover:bg-red-600">Google</button>
+
+                    <!-- Password and Confirm Password in single row -->
+                    <div class="flex space-x-4">
+                        
+                    
+
+                        <div class="w-1/2">
+                            <label class="font-semibold m-2">Password:</label>
+                            <input type="password" placeholder="Password" class="w-full font-semibold border border-gray-300 rounded-lg p-3 focus:border-indigo-500 focus:ring focus:ring-indigo-200" required>
+                        </div>
+                        <div class="w-1/2">
+                            <label class="font-semibold m-2">Confirm Password:</label>
+                            <input type="password" placeholder="Confirm Password" class="w-full font-semibold border border-gray-300 rounded-lg p-3 focus:border-indigo-500 focus:ring focus:ring-indigo-200" required>
+                        </div>
+                    </div>
+                    <div class=" container text-center pt-10">
+
+                        <button type="submit" class="w-25 bg-indigo-500  mr-5 text-white rounded-lg p-3 font-semibold hover:bg-indigo-600">Login</button>
+                        <button type="button" class="w-25 bg-red-500 text-white rounded-lg p-3 font-semibold hover:bg-red-600">Login with Google</button>
+                    </div>
                 </form>
-                <a href="" class="font-semibold hover:text-blue-800 pt-3 flex justify-center">new User signup?</a>
-                <a href="" class="font-semibold hover:text-blue-900 pt-3 flex justify-center">Forget Password </a>
+
+                <a data-th-href="@{/login}" class="font-semibold text-blue-800 hover:text-blue-800 pt-3 flex justify-center">Already have a accout? Login</a>
                 
             </div>
         </div>
     </div>
+    <script>
+        console.log('This is signup page');
+    </script>
 </body>
 </html>

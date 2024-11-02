@@ -1,0 +1,25 @@
+<div id="navbar" class="flex justify-between items-center p-4 bg-gray-100 shadow-md">
+    <!-- Left Side Links -->
+    <div data-th-fragment="{navbar}" class="flex space-x-6">
+        <a data-th-href="@{/home}" class="text-gray-800 hover:text-blue-500 font-semibold">Home</a>
+        <a data-th-href="@{/about}" class="text-gray-800 hover:text-blue-500 font-semibold">About</a>
+        <a data-th-href="@{/contactus}" class="text-gray-800 hover:text-blue-500 font-semibold">Contact</a>
+    </div>
+
+    <!-- Right Side Buttons -->
+     
+    <!-- <div th:if="$loggedUser" class="flex space-x-4">
+        <a data-th-href="@{/user/profile}">
+           <img class="w-10 h-10 rounded-full" th:src="${loggedUser.profilePhoto}" alt="Rounded avatar" /> 
+         <img data-th-src="${}" alt="" srcset=""> 
+        </a>
+    </div> -->
+
+    <div th:unless="${loggedUser}" class="flex space-x-4">
+        <a type="button" data-th-href="@{/login}" class="btn bg-blue-500 text-white rounded-lg py-2 px-4 hover:bg-blue-700">Login</a>
+        <a type="button" data-th-href="@{/signup}" class="btn bg-gray-200 text-gray-800 rounded-lg py-2 px-4 hover:bg-gray-300">Signup</a>
+    </div>
+
+
+  
+</div>

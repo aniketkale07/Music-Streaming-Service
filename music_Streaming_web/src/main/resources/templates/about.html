@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"
+data-th-replace="~{base-template :: parent(~{:: title}, ~{:: #content}, ~{:: script})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+   
+</head>
+<body class="bg-gray-100">
+
+    <div id="content">
+    <!-- Hero Section -->
+    <section class="bg-blue-600 text-white py-20">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold">About Us</h1>
+            <p class="mt-4 text-lg">Learn more about our journey, mission, and the team behind our success.</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:flex md:justify-between">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Our Mission</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Our mission is to provide exceptional services by fostering innovation and creativity. We aim to
+                    connect with people worldwide and make a positive impact in the tech community through our
+                    products and services.
+                </p>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <img data-th-src="@{/images/missionImg.jpg}" alt="Mission Image" class="rounded-full h-32 w-64 shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-blue-600 mb-10">Meet the Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Team Member -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="/images/founder.png" alt="Team Member" class="rounded-full mx-auto mb-4">
+                    <h3 class="font-semibold text-lg">Aniket kale</h3>
+                    <p class="text-blue-600">Inspiration</p>
+                    <p class="text-gray-600 mt-2"></p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img data-th-src="@{/images/cofounder.jpg}" alt="Team Member" class="rounded-full mx-auto mb-4">
+                    <h3 class="font-semibold text-lg">Arohi Deshmukh</h3>
+                    <p class="text-blue-600">CEO & Founder</p>
+                    <p class="text-gray-600 mt-2">Arohi has over 15 years of experience in the tech industry, leading our company towards new heights.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img data-th-src="@{/images/thr.jpg}" alt="Team Member" class="rounded-full mx-auto mb-4">
+                    <h3 class="font-semibold text-lg">Sakshi Chavan</h3>
+                    <p class="text-blue-600">Technical Supporator</p>
+                    <p class="text-gray-600 mt-2">Sakshi has over 15 years of experience in the tech industry, leading our company towards new heights.</p>
+                </div>
+                <!-- Repeat similar blocks for other team members -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 mt-10 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-blue-600 mb-10">Get in Touch</h2>
+            <form class="max-w-lg mx-auto space-y-6">
+                <div class="flex flex-col">
+                    <label for="name" class="text-left font-semibold">Name</label>
+                    <input type="text" id="name" placeholder="Your Name" class="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="flex flex-col">
+                    <label for="email" class="text-left font-semibold">Email</label>
+                    <input type="email" id="email" placeholder="Your Email" class="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="flex flex-col">
+                    <label for="message" class="text-left font-semibold">Message</label>
+                    <textarea id="message" placeholder="Your Message" class="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 MusicVerse. All rights reserved.</p>
+        </div>
+    </footer>
+
+</div>
+<script></script>
+</body>
+</html>

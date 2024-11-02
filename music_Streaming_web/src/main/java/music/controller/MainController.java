@@ -8,6 +8,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class MainController {
 
+@GetMapping("/home")
+public String home(){
+    return "home";
+}
+
+@GetMapping("/about")
+public String about(){
+    return "about";
+}
+
+@GetMapping("/contactus")
+public String contactUs(){
+    return "contact-us";
+}
+
     @GetMapping("/login")
     public String Login(Model model) {
         return "login";
@@ -27,5 +42,6 @@ public class MainController {
     @PostMapping("/newuser")
     public void NewUser(Model model) {
     }
+
 
 }

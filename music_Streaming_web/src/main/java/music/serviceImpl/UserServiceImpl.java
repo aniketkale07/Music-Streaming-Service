@@ -3,10 +3,7 @@ package music.serviceImpl;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.support.Repositories;
 import org.springframework.stereotype.Service;
-
-import com.nimbusds.openid.connect.sdk.UserInfoRequest;
 
 import music.entity.Music;
 import music.entity.User;
