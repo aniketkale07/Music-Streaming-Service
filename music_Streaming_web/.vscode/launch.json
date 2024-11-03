@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MusicStreamingWebApplication<music_Streaming_web>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "music.MusicStreamingWebApplication",
+            "projectName": "music_Streaming_web",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
