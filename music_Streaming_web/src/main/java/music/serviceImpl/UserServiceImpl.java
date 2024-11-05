@@ -3,6 +3,8 @@ package music.serviceImpl;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import music.entity.Music;
@@ -15,6 +17,10 @@ public class UserServiceImpl implements UserService {
 
 @Autowired
 private UserRepository userRepository;
+
+@Autowired
+private PasswordEncoder passwordEncoder;
+
 
     @Override
     public User getUser(long userId) {
@@ -31,5 +37,23 @@ private UserRepository userRepository;
     public ArrayList<User> getAllUser() {
         
         return (ArrayList<User>) userRepository.findAll();
-    }  
+    }
+
+    @Override
+    public User findByEmail(String email) {
+
+            return userRepository.findByEmail(email);
+       
+       
+    }
+
+    @Override
+    public void saveUser(User user) {
+       String password = user.getPassword();
+       String encryptPasswd = passwordEncoder.encode(password).toString();
+       user.setPassword(encryptPasswd);
+               userRepository.save(user);
+           }
+       
+     
 }
