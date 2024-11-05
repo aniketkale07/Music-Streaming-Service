@@ -49,9 +49,6 @@ private PasswordEncoder passwordEncoder;
 
     @Override
     public void saveUser(User user) {
-       String password = user.getPassword();
-       String encryptPasswd = passwordEncoder.encode(password).toString();
-       user.setPassword(encryptPasswd);
                userRepository.save(user);
            }
        

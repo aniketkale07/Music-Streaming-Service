@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{base-template :: parent(~{:: title}, ~{:: #content}, ~{:: script})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Music Streaming App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom background styling */
+        body {
+            background-image: url('src/main/resources/static/images/home-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* Optional overlay */
+        .overlay {
+            background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Positioned behind content */
+        }
+    </style>
+</head>
+<body class="relative bg-gray-100 text-white">
+    <!-- Background Overlay -->
+    <div class="overlay"></div>
+
+    <section id="content" class="container mx-auto py-10 px-5 text-center relative z-10">
+        <!-- Welcome Section -->
+        <div class="mb-12">
+            <h3 class="text-4xl font-semibold text-blue-200 mb-4">Welcome to MusicVerse</h3>
+            <p class="text-lg text-gray-200">
+                Dive into a world of melodies and rhythms! Discover, stream, and share music from around the globe with our all-in-one streaming platform.
+            </p>
+        </div>
+
+        <!-- Key Features Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+                <h4 class="text-2xl font-semibold text-purple-500 mb-2">Unlimited Streaming</h4>
+                <p class="text-gray-600">Stream your favorite tracks without limits. Enjoy high-quality audio and seamless playback across all your devices.</p>
+            </div>
+            <div class="p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+                <h4 class="text-2xl font-semibold text-purple-500 mb-2">Create Playlists</h4>
+                <p class="text-gray-600">Customize your music experience. Build playlists for every mood, event, and moment.</p>
+            </div>
+            <div class="p-6 bg-white bg-opacity-80 rounded-lg shadow-md">
+                <h4 class="text-2xl font-semibold text-purple-500 mb-2">Share with Friends</h4>
+                <p class="text-gray-600">Connect with friends and share your favorite tracks. Discover new music through social listening.</p>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="py-10 mt-10">
+            <a href="/signup" class="bg-blue-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-200">
+                Get Started with MusicVerse
+            </a>
+            <p class="text-gray-300 mt-4">Already have an account? <a href="/login" class="text-blue-200 hover:underline">Log In</a></p>
+        </div>
+    </section>
+
+    <script>
+        console.log('Welcome to MusicVerse Home page');
+    </script>
+</body>
+</html>

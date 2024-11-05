@@ -14,5 +14,8 @@ public interface UserService {
 
     ArrayList<User> getAllUser();
 
+    User findByEmail(String email);
+    
+    void saveUser(User user);
     
 }

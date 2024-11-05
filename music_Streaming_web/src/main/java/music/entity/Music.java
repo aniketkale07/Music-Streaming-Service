@@ -1,9 +1,12 @@
 package music.entity;
 
+import org.hibernate.annotations.GeneratorType;
 import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -21,6 +24,7 @@ import lombok.Setter;
 public class Music {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long musicId;
     private String musicName;
     private float musicLength;
